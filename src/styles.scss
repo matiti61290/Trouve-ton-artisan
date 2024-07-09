@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+// Import font
+@font-face {
+    font-family: Graphik;
+    src: url('./assets/fonts/Graphik-Regular-Trial.otf');
+}
+
+// Add custom colors
+@import '../node_modules/bootstrap/scss/functions';
+@import '../node_modules/bootstrap/scss/variables';
+
+$custom-colors: (
+    'back' : #f1f8fc,
+    'border' :  #0074c7,
+    'title' :  #00497c,
+    'icon' : #384050,
+    'redLine' : #cd2c2e,
+    'greenLine' : #82b864 
+);
+
+$theme-colors: map-merge($theme-colors , $custom-colors);
+
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+*{
+    font-family: Graphik;
+}
