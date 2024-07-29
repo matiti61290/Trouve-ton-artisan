@@ -24,3 +24,8 @@ $theme-colors: map-merge($theme-colors , $custom-colors);
 *{
     font-family: Graphik;
 }
+
+body{
+    padding: 0;
+    margin: 0;
+   }
