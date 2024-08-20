@@ -1,0 +1,44 @@
+.logo {
+    width: 120px;
+};
+
+@media only screen and (min-width: 768px) {
+    .logo {
+        width: 165px;
+    }
+};
+
+@media only screen and (min-width: 992px) {
+    .logo {
+        width: 272px;
+    }
+};
+
+.form-control {
+    padding-left: 10em;
+    border: none;
+    border-radius: 0;
+}
+
+#navbarSearchBar {
+    justify-content: end;
+}
+
+.navbar-nav{
+    align-items: center;
+}
+
+a{
+    display: block;
+    width: 15em;
+    height: auto;
+    text-align: center;
+}
+
+.navbar-brand{
+    width: auto;
+}
+
+button {
+    background: none;
+}
