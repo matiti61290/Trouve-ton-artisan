@@ -1,0 +1,11 @@
+@for (artisan of artisans | sortByRating; track $index) {
+    @if ( $index <= 2 ) {
+        <div>
+            <ul>
+                <li> {{artisan.name}} </li>
+                <li> {{artisan.specialty}} </li>
+                <li> {{artisan.location}} </li>
+            </ul>
+        </div>
+    }
+}
