@@ -1,0 +1,15 @@
+<div class="container">
+    @for (star of stars ; track $index) {
+        @if ( 5 - ratingNumber <= ratingNumber ){
+            @if ( star <= ratingNumber){
+            <mat-icon [ngStyle]="{'color': fullColor}">star_filled</mat-icon>
+            }
+            @if ( star > ratingNumber) {
+                <mat-icon class="iconGradient" [ngStyle]="{'background': gradientStar}">star</mat-icon>
+            }
+        }
+        @if ( 5 - ratingNumber > ratingNumber) {
+            <mat-icon [ngStyle]="{'color': emptyColor}">star_outlined</mat-icon>
+        }
+    }
+</div>
