@@ -1,12 +1,16 @@
 @for (artisan of artisans | sortByRating; track $index) {
     @if ( $index <= 2 ) {
-        <div>
-            <ul>
-                <li> {{artisan.name}} </li>
-                <li> {{artisan.specialty}} </li>
-                <li> {{artisan.location}} </li>
-            </ul>
-            <app-star-rating rating="{{ artisan.note }}"/>
+        <div class="col-12 col-md-5 col-lg-3 border border-2 border-border rounded-4 mx-2 my-2 mx-md-4 my-md-4 mx-lg-5 d-flex flex-row justify-content-center align-items-center">
+            <div class="pe-3 mt-3">
+                <ul>
+                    <li> {{artisan.name}} </li>
+                    <li> {{artisan.specialty}} </li>
+                    <li> {{artisan.location}} </li>
+                </ul>
+            </div>
+            <div>
+                <app-star-rating rating="{{ artisan.note }}"/>
+            </div>
         </div>
     }
 }

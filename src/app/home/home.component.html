@@ -1,26 +1,31 @@
 <div>
-    <div class="howToUse">
-        <h1>Comment utiliser le site?</h1>
+    <div class="howToUse mb-5">
+        <h1 class="fs-2 fw-bold text-title ms-3 mt-5">Comment utiliser le site?</h1>
+        <div class="bg-border ms-4" style="height: 7px; width: 27px;"></div>
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-12 col-md-6 col-lg-3">
+            <div class="row ms-4 me-1 mt-4">
+                <div class="col-12 col-md-6 col-lg-3 py-2">
                     <p>1. Trouvez ce que vous cherchez avec la recherche ou les categories.</p>
                 </div>
-                <div class="col-12 col-md-6 col-lg-3">
-                    <p>2. Choisissez l'artisan qui correspond a vos besoins.
-                    </p>
+                <div class="col-12 col-md-6 col-lg-3 py-2">
+                    <p>2. Choisissez l'artisan qui correspond a vos besoins.</p>
                 </div>
-                <div class="col-12 col-md-6 col-lg-3">
+                <div class="col-12 col-md-6 col-lg-3 py-2">
                     <p>3. Contactez l'artisan a l'aide du formulaire fourni ou directement sur son s'il en possede un.</p>
                 </div>
-                <div class="col-12 col-md-6 col-lg-3">
+                <div class="col-12 col-md-6 col-lg-3 py-2">
                     <p>4. L'artisan vous repondra dans les 48h apres l'envoie de votre message.</p>
                 </div>
             </div>
         </div>
     </div>
     <div class="bestArtisans">
-        <h1>Nos meilleurs artisans du mois</h1>
-        <app-best-artisan />
+        <h1 class="fs-2 fw-bold text-title ms-3">Nos meilleurs artisans du mois</h1>
+        <div class="bg-greenLine ms-4" style="height: 7px; width: 27px;"></div>
+        <div class="container">
+            <div class="mt-5 mx-4">
+                <app-best-artisan class="row d-flex justify-content-center" />
+            </div>
+        </div>
     </div>
 </div>
