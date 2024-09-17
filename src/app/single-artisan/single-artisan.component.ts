@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterLink, ActivatedRoute } from '@angular/router';
+import { RouterLink, ActivatedRoute, Router } from '@angular/router';
 import { ArtisanDatasService } from '../service/artisan-datas.service';
 import { CommonModule } from '@angular/common';
 import { InterfaceArtisans } from '../interface/InterfaceArtisans';
@@ -17,14 +17,14 @@ import { InterfaceArtisans } from '../interface/InterfaceArtisans';
 export class SingleArtisanComponent implements OnInit {
 
   public artisans!: InterfaceArtisans[];
+  public name!: string
 
   constructor(
     private route: ActivatedRoute,
     private artisansService: ArtisanDatasService
   ) {}
 
-  ngOnInit() {
-    this.artisansService.getArtisans().subscribe(data => (this.artisans = data))
+  ngOnInit(): void {
+    this.artisansService.getArtisans().subscribe(data => (this.artisans = data));
   }
-
 }

@@ -8,13 +8,16 @@ import { InterfaceArtisans } from '../interface/InterfaceArtisans';
 })
 export class ArtisanDatasService {
   private _url: string = "/data/datas.json"
+  artisans!: InterfaceArtisans;
 
  constructor(
   private http:HttpClient
  ) {}
 
   getArtisans(): Observable<InterfaceArtisans[]> {
-    return this.http.get<InterfaceArtisans[]>(this._url)
-  }
+    const artisans = this.http.get<InterfaceArtisans[]>(this._url)
+    return artisans;
+  };
 
+  
 }

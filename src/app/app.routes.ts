@@ -6,5 +6,5 @@ import { SingleArtisanComponent } from './single-artisan/single-artisan.componen
 export const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'artisanlist', component:ArtisanListComponent },
-    { path: 'artisans/:name', component: SingleArtisanComponent}
+    { path: 'artisan/:name', component: SingleArtisanComponent}
 ];
