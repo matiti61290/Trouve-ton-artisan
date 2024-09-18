@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { InterfaceArtisans } from '../interface/InterfaceArtisans';
 
 @Injectable({
@@ -19,5 +19,14 @@ export class ArtisanDatasService {
     return artisans;
   };
 
+  getArtisanByName(name: string): Observable<InterfaceArtisans> {
+    return this.getArtisans().pipe(map(artisans => {
+      const artisan = artisans.find(artisan => artisan.name === name)
+      if (artisan) {
+        return artisan;
+      }
+      throw new Error('Artisan not found');
+    }));
+  }
   
 }

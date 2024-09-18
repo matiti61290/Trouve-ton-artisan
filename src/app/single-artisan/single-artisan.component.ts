@@ -16,8 +16,7 @@ import { InterfaceArtisans } from '../interface/InterfaceArtisans';
 })
 export class SingleArtisanComponent implements OnInit {
 
-  public artisans!: InterfaceArtisans[];
-  public name!: string
+  public artisan!: InterfaceArtisans
 
   constructor(
     private route: ActivatedRoute,
@@ -25,6 +24,14 @@ export class SingleArtisanComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.artisansService.getArtisans().subscribe(data => (this.artisans = data));
+    // this.artisansService.getArtisans().subscribe(data => (this.artisans = data));
+    const artisanName = this.route.snapshot.params['name'];
+    this.artisansService.getArtisanByName(artisanName).subscribe(data => (this.artisan = data))
+  // this.getArtisan()
   }
+
+  // private getArtisan(){
+  //   const artisanName = this.route.snapshot.params['name'];
+  //   this.artisan = this.artisansService.getArtisanByName(artisanName).subscribe(data => (this.artisan = data))
+  // }
 }
