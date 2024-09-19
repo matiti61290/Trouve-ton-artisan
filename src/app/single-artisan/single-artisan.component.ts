@@ -3,13 +3,15 @@ import { RouterLink, ActivatedRoute, Router } from '@angular/router';
 import { ArtisanDatasService } from '../service/artisan-datas.service';
 import { CommonModule } from '@angular/common';
 import { InterfaceArtisans } from '../interface/InterfaceArtisans';
+import { StarRatingComponent } from '../component/star-rating/star-rating.component';
 
 @Component({
   selector: 'app-single-artisan',
   standalone: true,
   imports: [
     RouterLink,
-    CommonModule
+    CommonModule,
+    StarRatingComponent
   ],
   templateUrl: './single-artisan.component.html',
   styleUrl: './single-artisan.component.scss'
