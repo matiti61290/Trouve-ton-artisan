@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
-import { InterfaceArtisans } from '../interface/InterfaceArtisans';
+import { InterfaceArtisans } from '../../interface/InterfaceArtisans';
 
 @Injectable({
   providedIn: 'root'

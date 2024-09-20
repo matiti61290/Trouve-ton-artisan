@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row my-lg-5">
-        <div class="col-12 col-lg-6 artisanInfo mt-5 ms-5 mb-3 mt-lg-0 ms-lg-0 ">
-            <div >
+        <div class="col-12 col-lg-6 artisanInfo mt-5 mb-3 mt-lg-0 ms-lg-0 ">
+            <div>
                 <h5 class="fs-2 fw-bold text-title">{{ artisan.name }}</h5>
                 <div class="mb-3">
                     <app-star-rating  rating="{{ artisan.note }}" />
@@ -13,7 +13,7 @@
                 }
             </div>
         </div>
-        <div class="about col-12 col-lg-6 mx-5 mx-lg-0 mb-5 mb-lg-0">
+        <div class="about col-12 col-lg-6 mx-lg-0 mb-5 mb-lg-0">
             <h5 class="fs-3 fw-semibold">About</h5>
             <div class="bg-back border border-1 border-border rounded-4 px-3 py-2">
                 <p>{{ artisan.about }}</p>
@@ -21,4 +21,23 @@
         </div>
     </div>
 </div>
-    
+<div class="container">
+    <div class="bg-redLine mb-5 " style="height: 7px; width: 27px"></div>
+</div>
+<div class="container">
+    <div class="form">
+        <h5 class="fs-2 fw-bold text-title">Contact</h5>
+        <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)" novalidate>
+            <div class="d-flex flex-column flex-md-row justify-content-md-between mt-2">
+                <input class="mb-4 ps-3 py-1 bg-back border border-1 border-border rounded-4" type="text" name="userfirstname" required placeholder="Prenom" [(ngModel)]="userMail.firstName">
+                <input class="mb-md-4 ps-3 py-1 bg-back border border-1 border-border rounded-4" type="text" name="userlastname" required placeholder="Nom" [(ngModel)]="userMail.lastName">
+            </div>
+            <div class="d-flex flex-column mt-4 mt-md-0 py-1">
+                <input class="mb-4 ps-3 py-1 bg-back border border-1 border-border rounded-4" type="mail" name="usermail" required placeholder="Mail" [(ngModel)]="userMail.mail">
+                <input class="mb-4 ps-3 py-1 bg-back border border-1 border-border rounded-4" type="text" name="userobject" required placeholder="Objet" [(ngModel)]="userMail.object">
+                <textarea class="mb-4 ps-3 bg-back border border-1 border-border rounded-4" name="usermessage" required placeholder="Message" [(ngModel)]="userMail.message"></textarea>
+                <button class="mb-4 text-white bg-border border border-1 border-border rounded-4" type="submit">Envoyez</button>
+            </div>
+        </form>
+    </div>
+</div>
