@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ArtisanDatasService } from '../service/artisan-datas.service';
+import { ArtisanDatasService } from '../service/artisanService/artisan-datas.service';
 import { InterfaceArtisans } from '../interface/InterfaceArtisans';
 import { BestArtisanComponent } from '../component/best-artisan/best-artisan.component';
 import { SortByRatingPipe } from '../pipes/sort-by-rating.pipe';
