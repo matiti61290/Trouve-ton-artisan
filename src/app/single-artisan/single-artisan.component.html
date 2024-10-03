@@ -27,15 +27,15 @@
 <div class="container">
     <div class="form">
         <h5 class="fs-2 fw-bold text-title">Contact</h5>
-        <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)" novalidate>
+        <form  (ngSubmit)="onSubmit($event)" novalidate>
             <div class="d-flex flex-column flex-md-row justify-content-md-between mt-2">
-                <input class="mb-4 ps-3 py-1 bg-back border border-1 border-border rounded-4" type="text" name="userfirstname" required placeholder="Prenom" [(ngModel)]="userMail.firstName">
-                <input class="mb-md-4 ps-3 py-1 bg-back border border-1 border-border rounded-4" type="text" name="userlastname" required placeholder="Nom" [(ngModel)]="userMail.lastName">
+                <input class="mb-4 ps-3 py-1 bg-back border border-1 border-border rounded-4" type="text" name="user_firstname" required placeholder="Prenom">
+                <input class="mb-md-4 ps-3 py-1 bg-back border border-1 border-border rounded-4" type="text" name="user_lastname" required placeholder="Nom">
             </div>
             <div class="d-flex flex-column mt-4 mt-md-0 py-1">
-                <input class="mb-4 ps-3 py-1 bg-back border border-1 border-border rounded-4" type="mail" name="usermail" required placeholder="Mail" [(ngModel)]="userMail.mail">
-                <input class="mb-4 ps-3 py-1 bg-back border border-1 border-border rounded-4" type="text" name="userobject" required placeholder="Objet" [(ngModel)]="userMail.object">
-                <textarea class="mb-4 ps-3 bg-back border border-1 border-border rounded-4" name="usermessage" required placeholder="Message" [(ngModel)]="userMail.message"></textarea>
+                <input class="mb-4 ps-3 py-1 bg-back border border-1 border-border rounded-4" type="mail" name="user_email" required placeholder="Mail">
+                <input class="mb-4 ps-3 py-1 bg-back border border-1 border-border rounded-4" type="text" name="object" required placeholder="Objet">
+                <textarea class="mb-4 ps-3 bg-back border border-1 border-border rounded-4" name="message" required placeholder="Message"></textarea>
                 <button class="mb-4 text-white bg-border border border-1 border-border rounded-4" type="submit">Envoyez</button>
             </div>
         </form>
