@@ -8,7 +8,7 @@ import { InterfaceArtisans } from '../../interface/InterfaceArtisans';
 })
 export class ArtisanDatasService {
   private _url: string = "/data/datas.json"
-  artisans!: InterfaceArtisans;
+  artisans: InterfaceArtisans[] = [];
 
  constructor(
   private http:HttpClient
@@ -27,6 +27,13 @@ export class ArtisanDatasService {
       }
       throw new Error('Artisan not found');
     }));
+  };
+
+  getArtisansByCategories(){
+    const artisans = this.http.get<InterfaceArtisans[]>(this._url)
+    const artisanCategories = (category: keyof typeof artisans) => {
+      return artisans[category]
+    }
   }
   
 }

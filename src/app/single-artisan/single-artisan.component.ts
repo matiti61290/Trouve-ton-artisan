@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { InterfaceArtisans } from '../interface/InterfaceArtisans';
 import { StarRatingComponent } from '../component/star-rating/star-rating.component';
 import { NgForm, FormsModule } from '@angular/forms';
+import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser'
 
 
 @Component({
@@ -22,13 +23,6 @@ import { NgForm, FormsModule } from '@angular/forms';
 export class SingleArtisanComponent implements OnInit {
 
   public artisan!: InterfaceArtisans
-  public userMail = {
-    firstName: '',
-    lastName: '',
-    mail: '',
-    object: '',
-    message: ''
-  }
 
   constructor(
     private route: ActivatedRoute,
@@ -40,7 +34,15 @@ export class SingleArtisanComponent implements OnInit {
     this.artisansService.getArtisanByName(artisanName).subscribe(data => (this.artisan = data))
   }
 
-  onSubmit(contactForm: NgForm){
-    console.log(this.userMail)
+  onSubmit(e: Event){
+    emailjs.sendForm('service_uer984q', 'template_i1k60pb', e.target as HTMLFormElement, {publicKey: '1oFyPt_ixXmtaAEqV'})
+    .then(
+      () => {
+        console.log('success')
+      },
+      (error) => {
+        console.log('failed', (error as EmailJSResponseStatus).text)
+      }
+    )
   }
 }
