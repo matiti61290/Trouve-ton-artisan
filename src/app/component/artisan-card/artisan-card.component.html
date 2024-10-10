@@ -1,4 +1,6 @@
-@for (artisan of artisans; track $index) {
+<input type="text" placeholder="search" [(ngModel)]="searchText" name="searchText">
+
+@for (artisan of artisans | searchFilter: searchText; track $index) {
     <div class="col-12 col-sm-6 col-md-4 ">
         <div class="card border border-2 border-border rounded-4 my-4">
             <div class="card-body">

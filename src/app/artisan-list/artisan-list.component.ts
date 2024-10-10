@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ArtisanCardComponent } from '../component/artisan-card/artisan-card.component';
 
+
 @Component({
   selector: 'app-artisan-list',
   standalone: true,

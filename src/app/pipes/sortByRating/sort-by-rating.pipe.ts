@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { InterfaceArtisans } from '../interface/InterfaceArtisans';
+import { InterfaceArtisans } from '../../interface/InterfaceArtisans';
 
 @Pipe({
   name: 'sortByRating',

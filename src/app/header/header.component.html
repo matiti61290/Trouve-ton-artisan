@@ -16,8 +16,8 @@
 
 
                         <form class="mx-3 d-flex flex-row" role="search">
-                            <input type="search" class="form-control border-bottom border-border h-2" placeholder="tapez votre recherche ici" aria-label="Search">
-                            <button type="submit" class="border border-0 "><img class="bg-body-back" src="img/searchIcon.svg" alt="search icon"></button>
+                            <input type="text" [(ngModel)]="searchText" name="searchText" class="form-control border-bottom border-border h-2" placeholder="tapez votre recherche ici" aria-label="Search">
+                            <button (click)="OnViewSearchResult()" class="border border-0 "><img class="bg-body-back" src="img/searchIcon.svg" alt="search icon"></button>
                         </form>
 
 

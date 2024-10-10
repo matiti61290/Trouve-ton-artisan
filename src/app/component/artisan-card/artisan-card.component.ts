@@ -3,6 +3,9 @@ import { StarRatingComponent } from '../star-rating/star-rating.component';
 import { ArtisanDatasService } from '../../service/artisanService/artisan-datas.service';
 import { InterfaceArtisans } from '../../interface/InterfaceArtisans';
 import { Router, RouterLink } from '@angular/router';
+import { SearchFilterPipe } from '../../pipes/searchFilter/search-filter.pipe';
+
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
@@ -10,7 +13,9 @@ import { Router, RouterLink } from '@angular/router';
   standalone: true,
   imports: [
     StarRatingComponent,
-    RouterLink
+    RouterLink,
+    SearchFilterPipe,
+    FormsModule
   ],
   templateUrl: './artisan-card.component.html',
   styleUrl: './artisan-card.component.scss'
@@ -18,6 +23,7 @@ import { Router, RouterLink } from '@angular/router';
 export class ArtisanCardComponent implements OnInit {
 
   public artisans!: InterfaceArtisans[];
+  public searchText: string = ""
 
   constructor (
     private artisansService: ArtisanDatasService,
