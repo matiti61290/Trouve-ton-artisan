@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { StarRatingComponent } from '../star-rating/star-rating.component';
 import { ArtisanDatasService } from '../../service/artisanService/artisan-datas.service';
 import { InterfaceArtisans } from '../../interface/InterfaceArtisans';
@@ -22,8 +22,9 @@ import { FormsModule } from '@angular/forms';
 })
 export class ArtisanCardComponent implements OnInit {
 
-  public artisans!: InterfaceArtisans[];
+  // public artisans!: InterfaceArtisans[];
   public searchText: string = ""
+  @Input() artisan!: InterfaceArtisans
 
   constructor (
     private artisansService: ArtisanDatasService,
@@ -31,7 +32,7 @@ export class ArtisanCardComponent implements OnInit {
   ){}
 
   ngOnInit() {
-    this.artisansService.getArtisans().subscribe(data => (this.artisans = data))
+    // this.artisansService.getArtisans().subscribe(data => (this.artisans = data))
   }
 
 }
