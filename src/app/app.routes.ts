@@ -8,7 +8,7 @@ import { CategorylistComponent } from './categorylist/categorylist.component';
 export const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'artisanlist', component:ArtisanListComponent },
-    { path: 'artisanlist/:name', component: SingleArtisanComponent},
+    { path: 'artisans/:name', component: SingleArtisanComponent},
     { path: 'category', component: CategorylistComponent},
     { path: '**', pathMatch: 'full', component: PagenotfoundComponent},
 ];

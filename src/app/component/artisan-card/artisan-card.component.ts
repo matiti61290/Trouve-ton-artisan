@@ -35,4 +35,8 @@ export class ArtisanCardComponent implements OnInit {
     // this.artisansService.getArtisans().subscribe(data => (this.artisans = data))
   }
 
+  onViewArtisan() {
+    this.router.navigateByUrl(`artisans/${this.artisan.name}`)
+  }
+
 }

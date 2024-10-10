@@ -1,6 +1,13 @@
 <div class="container">
-    <h1>{{ searchText }}</h1>
-    <input type="text" placeholder="search" [(ngModel)]="searchText" name="searchText">
+    <div class="mt-5">
+        <h3 class="fs-3 fw-medium text-title">
+            Modifier la recherche
+        </h3>
+        <div class="col-12 col-lg-5 mt-3 mb-5">
+            <input type="text" class="form-control rounded-pill border border-border" placeholder="search" [(ngModel)]="searchText" name="searchText" [placeholder]="searchText">
+        </div>
+    </div>
+
     <div class="row">
         @for ( artisan of artisans | searchFilter: searchText; track $index ){
             <div class="col-12 col-sm-6 col-md-4">

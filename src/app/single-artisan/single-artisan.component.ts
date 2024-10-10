@@ -4,7 +4,7 @@ import { ArtisanDatasService } from '../service/artisanService/artisan-datas.ser
 import { CommonModule } from '@angular/common';
 import { InterfaceArtisans } from '../interface/InterfaceArtisans';
 import { StarRatingComponent } from '../component/star-rating/star-rating.component';
-import { NgForm, FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser'
 
 
@@ -29,9 +29,9 @@ export class SingleArtisanComponent implements OnInit {
     private artisansService: ArtisanDatasService
   ) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     const artisanName = this.route.snapshot.params['name'];
-    this.artisansService.getArtisanByName(artisanName).subscribe(data => (this.artisan = data))
+    this.artisansService.getArtisanByName(artisanName).subscribe(data => this.artisan = data)
   }
 
   onSubmit(e: Event){

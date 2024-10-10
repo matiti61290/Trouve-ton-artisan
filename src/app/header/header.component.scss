@@ -24,21 +24,14 @@
     justify-content: end;
 }
 
-.navbar-nav{
-    align-items: center;
-}
-
-a{
-    display: block;
-    width: 15em;
-    height: auto;
-    text-align: center;
-}
-
 .navbar-brand{
     width: auto;
 }
 
 button {
     background: none;
+}
+
+.btn {
+    width: 15em;
 }
