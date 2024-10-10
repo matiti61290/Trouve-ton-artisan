@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-lg bg-body-back shadow-sm">
         <div class="container-fluid">
           <a class="navbar-brand" href="#"><img class="logo" src="img/Logo.png" alt="logo"></a>
-            <div class="d-flex flex-column ">  
+            <div class="d-flex flex-column">  
                 <div>
                     <button class="navbar-toggler border border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSearchBar" aria-controls="navbarSearchBar" aria-expanded="false" aria-label="Toggle navigation">
                         <span><img src="img/searchIcon.svg" alt=""></span>
@@ -16,31 +16,19 @@
 
 
                         <form class="mx-3 d-flex flex-row" role="search">
-                            <input type="text" [(ngModel)]="searchText" name="searchText" class="form-control border-bottom border-border h-2" placeholder="tapez votre recherche ici" aria-label="Search">
+                            <input type="text" [(ngModel)]="searchText" name="searchText" class="form-control border-bottom border-border h-2" placeholder="tapez votre recherche" aria-label="Search">
                             <button (click)="newSearch()" class="border border-0 "><img class="bg-body-back" src="img/searchIcon.svg" alt="search icon"></button>
                         </form>
 
 
                     </div>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <!-- <ul class="navbar-nav mt-2">
-                            <li class="nav-item mx-3 my-3 my-lg-0">
-                                <a routerLink="/artisanlist" class="text-decoration-none text-light bg-border rounded-pill py-1">Batiment</a>
-                            </li>
-                            <li class="nav-item mx-3 my-3 my-lg-0">
-                                <a href="" class="text-decoration-none text-light bg-border rounded-pill py-1">Services</a>
-                            </li>
-                            <li class="nav-item mx-3 my-3 my-lg-0">
-                                <a class="text-decoration-none text-light bg-border rounded-pill py-1">Fabrication</a>
-                            </li>
-                            <li class="nav-item mx-3 my-3 my-lg-0">
-                                <a href="" class="text-decoration-none text-light bg-border rounded-pill py-1">Alimentation</a>
-                            </li>
-                        </ul> -->
-                        <button class="nav-item mx-3 my-3 my-lg-0 text-light bg-border rounded-pill" (click)="selectCategory('Bâtiment')">Batiment</button>
-                        <button class="nav-item mx-3 my-3 my-lg-0 text-light bg-border rounded-pill" (click)="selectCategory('Services')">Batiment</button>
-                        <button class="nav-item mx-3 my-3 my-lg-0 text-light bg-border rounded-pill" (click)="selectCategory('Fabrication')">Batiment</button>
-                        <button class="nav-item mx-3 my-3 my-lg-0 text-light bg-border rounded-pill" (click)="selectCategory('Alimentation')">Batiment</button>
+                        <div class="d-flex flex-column flex-lg-row mt-4 mt-lg-0">
+                            <button type="button" class="btn bg-border text-white rounded-pill mx-3 my-3" (click)="selectCategory('Bâtiment')">Bâtiment</button>
+                            <button type="button" class="btn bg-border text-white rounded-pill mx-3 my-3" (click)="selectCategory('Services')">Services</button>
+                            <button type="button" class="btn bg-border text-white rounded-pill mx-3 my-3" (click)="selectCategory('Fabrication')">Fabrication</button>
+                            <button type="button" class="btn bg-border text-white rounded-pill mx-3 my-3" (click)="selectCategory('Alimentation')">Alimentation</button>
+                        </div>
                     </div>
                 </div>
             </div>
