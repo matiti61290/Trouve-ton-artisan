@@ -1,5 +1,8 @@
 <div class="container">
         <button (click)="category = 'Bâtiment'">Batiment</button>
+        <button (click)="category = 'Services'">Batiment</button>
+        <button (click)="category = 'Fabrication'">Batiment</button>
+        <button (click)="category = 'Alimentation'">Batiment</button>
     <div class="row">
         @for ( artisan of artisans| categoryFilter: category; track $index ){
             <div class="col-12 col-sm-6 col-md-4">

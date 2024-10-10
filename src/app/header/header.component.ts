@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { InterfaceArtisans } from '../interface/InterfaceArtisans';
 import { ArtisanDatasService } from '../service/artisanService/artisan-datas.service';
+import { SearchService } from '../service/searchService/search.service';
+import { CategoryService } from '../service/categoryService/category.service';
 import { FormsModule } from '@angular/forms';
 import { SearchFilterPipe } from '../pipes/searchFilter/search-filter.pipe';
 import { Router } from '@angular/router';
+
 
 
 
@@ -21,20 +24,44 @@ export class HeaderComponent implements OnInit {
 
   public artisans!: InterfaceArtisans[] 
   public searchText: string = ""
+  public category: string = ""
 
   constructor (
     private artisansService: ArtisanDatasService,
+    private searchService: SearchService,
+    private categoryService: CategoryService,
     private router: Router
   ){}
 
   ngOnInit(): void {
     this.artisansService.getArtisans().subscribe(data => this.artisans = data)
     console.log(this.artisans)
+
+    this.searchService.currentSearch.subscribe(search => this.searchText = search)
+
+    this.categoryService.currentCategory.subscribe(setCategory => this.category = setCategory)
   }
 
   // routing searchbar
   OnViewSearchResult(){
     this.router.navigateByUrl("artisanlist")
+  }
+
+  // filterByCategory( setcategory: string ) {
+  //   this.category = setcategory
+  //   console.log (this.category)
+  //   this.router.navigateByUrl('category')
+  // }
+
+  newSearch() {
+    this.searchService.changeSearch(this.searchText)
+    this.router.navigateByUrl('artisanlist')
+  }
+
+  selectCategory(setCategory: string) {
+    this.category = setCategory
+    this.categoryService.selectCategory(this.category)
+    this.router.navigateByUrl('category')
   }
 
 }
