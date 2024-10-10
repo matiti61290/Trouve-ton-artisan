@@ -1,1 +1,10 @@
-<p>categorylist works!</p>
+<div class="container">
+        <button (click)="category = 'Bâtiment'">Batiment</button>
+    <div class="row">
+        @for ( artisan of artisans| categoryFilter: category; track $index ){
+            <div class="col-12 col-sm-6 col-md-4">
+                <app-artisan-card [artisan]="artisan" class="row d-flex justify-content-center" />
+            </div>
+        }
+    </div>
+</div>

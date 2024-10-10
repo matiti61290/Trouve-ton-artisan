@@ -13,7 +13,7 @@ export class CategoryFilterPipe implements PipeTransform {
     if (category == "") return items;
 
     return items.filter( it => {
-      return it.category;
+      return it.category.includes(category);
     });
   }
 }
