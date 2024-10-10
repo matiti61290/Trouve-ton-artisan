@@ -1,41 +1,67 @@
 import { Component, OnInit } from '@angular/core';
 import { InterfaceArtisans } from '../interface/InterfaceArtisans';
 import { ArtisanDatasService } from '../service/artisanService/artisan-datas.service';
-import { Observable } from 'rxjs';
+import { SearchService } from '../service/searchService/search.service';
+import { CategoryService } from '../service/categoryService/category.service';
+import { FormsModule } from '@angular/forms';
+import { SearchFilterPipe } from '../pipes/searchFilter/search-filter.pipe';
+import { Router } from '@angular/router';
+
 
 
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
+  imports: [
+    FormsModule,
+    SearchFilterPipe
+  ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent implements OnInit {
 
   public artisans!: InterfaceArtisans[] 
-  categorizedArtisans: { [key: string]: InterfaceArtisans[] } = {};
+  public searchText: string = ""
+  public category: string = ""
 
   constructor (
     private artisansService: ArtisanDatasService,
+    private searchService: SearchService,
+    private categoryService: CategoryService,
+    private router: Router
   ){}
 
   ngOnInit(): void {
     this.artisansService.getArtisans().subscribe(data => this.artisans = data)
-    this.categorizedArtisans = this.sortByCategory(this.artisans)
-    console.log(this.categorizedArtisans)
     console.log(this.artisans)
+
+    this.searchService.currentSearch.subscribe(search => this.searchText = search)
+
+    this.categoryService.currentCategory.subscribe(setCategory => this.category = setCategory)
   }
 
-  sortByCategory(artisans: InterfaceArtisans[]): { [key:string]: InterfaceArtisans[]} {
-      return artisans.reduce((acc, artisan) => {
-      if (!acc[artisan.category]) {
-        acc[artisan.category] = []
-      }
-      acc[artisan.category].push(artisan)
-      return acc
-    }, {} as {[key:string]: InterfaceArtisans[]})
+  // routing searchbar
+  OnViewSearchResult(){
+    this.router.navigateByUrl("artisanlist")
+  }
+
+  // filterByCategory( setcategory: string ) {
+  //   this.category = setcategory
+  //   console.log (this.category)
+  //   this.router.navigateByUrl('category')
+  // }
+
+  newSearch() {
+    this.searchService.changeSearch(this.searchText)
+    this.router.navigateByUrl('artisanlist')
+  }
+
+  selectCategory(setCategory: string) {
+    this.category = setCategory
+    this.categoryService.selectCategory(this.category)
+    this.router.navigateByUrl('category')
   }
 
 }

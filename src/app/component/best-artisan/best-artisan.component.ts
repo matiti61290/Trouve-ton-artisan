@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ArtisanDatasService } from '../../service/artisanService/artisan-datas.service';
 import { InterfaceArtisans } from '../../interface/InterfaceArtisans';
-import { SortByRatingPipe } from '../../pipes/sort-by-rating.pipe';
+import { SortByRatingPipe } from '../../pipes/sortByRating/sort-by-rating.pipe';
 import { StarRatingComponent } from '../star-rating/star-rating.component';
 
 @Component({

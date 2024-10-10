@@ -1,5 +1,11 @@
 <div class="container">
-    <div>
-        <app-artisan-card class="row d-flex justify-content-center" />
+    <h1>{{ searchText }}</h1>
+    <input type="text" placeholder="search" [(ngModel)]="searchText" name="searchText">
+    <div class="row">
+        @for ( artisan of artisans | searchFilter: searchText; track $index ){
+            <div class="col-12 col-sm-6 col-md-4">
+                <app-artisan-card [artisan]="artisan" class="row d-flex justify-content-center" />
+            </div>
+        }
     </div>
 </div>
