@@ -35,7 +35,6 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.artisansService.getArtisans().subscribe(data => this.artisans = data)
-    console.log(this.artisans)
 
     this.searchService.currentSearch.subscribe(search => this.searchText = search)
 

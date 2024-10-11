@@ -15,7 +15,7 @@ import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser'
     RouterLink,
     CommonModule,
     StarRatingComponent,
-    FormsModule
+    FormsModule,
   ],
   templateUrl: './single-artisan.component.html',
   styleUrl: './single-artisan.component.scss'
@@ -29,7 +29,7 @@ export class SingleArtisanComponent implements OnInit {
     private artisansService: ArtisanDatasService
   ) {}
 
-  ngOnInit() {
+  ngOnInit():void {
     const artisanName = this.route.snapshot.params['name'];
     this.artisansService.getArtisanByName(artisanName).subscribe(data => this.artisan = data)
   }

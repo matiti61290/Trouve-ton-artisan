@@ -1,27 +1,29 @@
 <!-- Display artisan informations -->
-<div class="container">
-    <div class="row my-lg-5">
-        <div class="col-12 col-lg-6 artisanInfo mt-5 mb-3 mt-lg-0 ms-lg-0 ">
-            <div>
-                <h5 class="fs-2 fw-bold text-title"> {{ artisan.name }} </h5>
-                <div class="mb-3">
-                    <app-star-rating  rating="{{ artisan.note }}" />
+@if (artisan) {
+    <div class="container">
+        <div class="row my-lg-5">
+            <div class="col-12 col-lg-6 artisanInfo mt-5 mb-3 mt-lg-0 ms-lg-0 ">
+                <div>
+                    <h5 class="fs-2 fw-bold text-title"> {{ artisan.name }} </h5>
+                    <div class="mb-3">
+                        <app-star-rating  rating="{{ artisan.note }}" />
+                    </div>
+                    <p class="mb-3">{{ artisan.specialty }}</p>
+                    <p class="mb-3">{{ artisan.location }}</p>
+                    @if (artisan.website){
+                        <a href='{{ artisan.website }}'>{{ artisan.website }}</a>
+                    }
                 </div>
-                <p class="mb-3">{{ artisan.specialty }}</p>
-                <p class="mb-3">{{ artisan.location }}</p>
-                @if (artisan.website){
-                    <a href='{{ artisan.website }}'>{{ artisan.website }}</a>
-                }
             </div>
-        </div>
-        <div class="about col-12 col-lg-6 mx-lg-0 mb-5 mb-lg-0">
-            <h5 class="fs-3 fw-semibold">About</h5>
-            <div class="bg-back border border-1 border-border rounded-4 px-3 py-2">
-                <p>{{ artisan.about }}</p>
+            <div class="about col-12 col-lg-6 mx-lg-0 mb-5 mb-lg-0">
+                <h5 class="fs-3 fw-semibold">About</h5>
+                <div class="bg-back border border-1 border-border rounded-4 px-3 py-2">
+                    <p>{{ artisan.about }}</p>
+                </div>
             </div>
         </div>
     </div>
-</div>
+}
 <div class="container">
     <div class="bg-redLine mb-5 " style="height: 7px; width: 27px"></div>
 </div>
