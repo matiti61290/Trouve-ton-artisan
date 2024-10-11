@@ -1,4 +1,5 @@
 <div class="container">
+    <!-- search bar -->
     <div class="mt-5">
         <h3 class="fs-3 fw-medium text-title">
             Modifier la recherche
@@ -7,7 +8,8 @@
             <input type="text" class="form-control rounded-pill border border-border" placeholder="search" [(ngModel)]="searchText" name="searchText" [placeholder]="searchText">
         </div>
     </div>
-
+    
+    <!-- display research result -->
     <div class="row">
         @for ( artisan of artisans | searchFilter: searchText; track $index ){
             <div class="col-12 col-sm-6 col-md-4">

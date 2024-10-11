@@ -11,17 +11,17 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </div>
+
+                <!-- search bar -->
                 <div class="d-flex flex-column justify-content-end">
                     <div class="collapse navbar-collapse mt-3 mt-lg-0 mb-lg-3" id="navbarSearchBar">
-
-
                         <form class="mx-3 d-flex flex-row" role="search">
                             <input type="text" [(ngModel)]="searchText" name="searchText" class="form-control border-bottom border-border h-2" placeholder="tapez votre recherche" aria-label="Search">
                             <button (click)="newSearch()" class="border border-0 "><img class="bg-body-back" src="img/searchIcon.svg" alt="search icon"></button>
                         </form>
-
-
                     </div>
+                    
+                    <!-- categories -->
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <div class="d-flex flex-column flex-lg-row mt-4 mt-lg-0">
                             <button type="button" class="btn bg-border text-white rounded-pill mx-3 my-3" (click)="selectCategory('Bâtiment')">Bâtiment</button>

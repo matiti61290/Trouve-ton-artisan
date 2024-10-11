@@ -20,12 +20,11 @@ export class HomeComponent implements OnInit {
   public artisans!: InterfaceArtisans[];
   
 
-constructor(
-  private artisansService: ArtisanDatasService
-) {}
+  constructor(
+    private artisansService: ArtisanDatasService
+  ) {}
 
-ngOnInit() {
-  this.artisansService.getArtisans().subscribe(data => (this.artisans = data))
-}
-
+  ngOnInit() {
+    this.artisansService.getArtisans().subscribe(data => (this.artisans = data))
+  }
 }
