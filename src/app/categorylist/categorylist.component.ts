@@ -30,5 +30,4 @@ export class CategorylistComponent implements OnInit {
 
     this.categoryService.currentCategory.subscribe(setCategory => this.category = setCategory)
   }
-
 }

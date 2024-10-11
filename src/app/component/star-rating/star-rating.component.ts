@@ -37,8 +37,5 @@ export class StarRatingComponent implements OnInit {
     this.restValuePercent = 100 - this.gradientValuePercent;
 
     this.gradientStar = 'linear-gradient(to right, orange, orange '+ this.gradientValuePercent +'%, white, white '+ this.restValuePercent +' 100%),'
-    console.log(this.gradientStar)
-
   }
-
 }

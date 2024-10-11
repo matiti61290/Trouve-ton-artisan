@@ -26,5 +26,4 @@ export class BestArtisanComponent implements OnInit {
   ngOnInit() {
     this.artisansService.getArtisans().subscribe(data => (this.artisans = data));
   }
-
 }

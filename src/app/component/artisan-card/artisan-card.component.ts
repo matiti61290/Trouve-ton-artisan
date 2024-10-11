@@ -1,6 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { StarRatingComponent } from '../star-rating/star-rating.component';
-import { ArtisanDatasService } from '../../service/artisanService/artisan-datas.service';
 import { InterfaceArtisans } from '../../interface/InterfaceArtisans';
 import { Router, RouterLink } from '@angular/router';
 import { SearchFilterPipe } from '../../pipes/searchFilter/search-filter.pipe';
@@ -20,21 +19,16 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './artisan-card.component.html',
   styleUrl: './artisan-card.component.scss'
 })
-export class ArtisanCardComponent implements OnInit {
+export class ArtisanCardComponent {
 
-  // public artisans!: InterfaceArtisans[];
   public searchText: string = ""
   @Input() artisan!: InterfaceArtisans
 
   constructor (
-    private artisansService: ArtisanDatasService,
     private router: Router
   ){}
 
-  ngOnInit() {
-    // this.artisansService.getArtisans().subscribe(data => (this.artisans = data))
-  }
-
+  // navigation to the selected artisan
   onViewArtisan() {
     this.router.navigateByUrl(`artisans/${this.artisan.name}`)
   }

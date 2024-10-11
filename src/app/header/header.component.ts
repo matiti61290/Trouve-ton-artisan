@@ -47,21 +47,16 @@ export class HeaderComponent implements OnInit {
     this.router.navigateByUrl("artisanlist")
   }
 
-  // filterByCategory( setcategory: string ) {
-  //   this.category = setcategory
-  //   console.log (this.category)
-  //   this.router.navigateByUrl('category')
-  // }
-
+  // send the search value into the service and navigate to the artisanlist page
   newSearch() {
     this.searchService.changeSearch(this.searchText)
     this.router.navigateByUrl('artisanlist')
   }
 
+  // send the category into the service and navigate to the category page
   selectCategory(setCategory: string) {
     this.category = setCategory
     this.categoryService.selectCategory(this.category)
     this.router.navigateByUrl('category')
   }
-
 }

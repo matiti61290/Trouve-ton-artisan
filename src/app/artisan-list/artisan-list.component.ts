@@ -33,5 +33,4 @@ export class ArtisanListComponent implements OnInit {
 
     this.searchService.currentSearch.subscribe(search => this.searchText = search)
   }
-
 }

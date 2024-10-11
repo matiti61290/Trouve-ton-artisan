@@ -34,6 +34,7 @@ export class SingleArtisanComponent implements OnInit {
     this.artisansService.getArtisanByName(artisanName).subscribe(data => this.artisan = data)
   }
 
+  // send email with emailJS
   onSubmit(e: Event){
     emailjs.sendForm('service_uer984q', 'template_i1k60pb', e.target as HTMLFormElement, {publicKey: '1oFyPt_ixXmtaAEqV'})
     .then(
