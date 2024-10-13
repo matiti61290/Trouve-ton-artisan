@@ -1,3 +1,4 @@
+<!-- Préviens l'affichage des données avant le chargement de la page -->
 @if (artisans) {
     @for (artisan of artisans | sortByRating; track $index) {
         @if ( $index <= 2 ) {
