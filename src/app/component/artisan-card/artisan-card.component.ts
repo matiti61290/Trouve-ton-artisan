@@ -3,7 +3,6 @@ import { StarRatingComponent } from '../star-rating/star-rating.component';
 import { InterfaceArtisans } from '../../interface/InterfaceArtisans';
 import { Router, RouterLink } from '@angular/router';
 import { SearchFilterPipe } from '../../pipes/searchFilter/search-filter.pipe';
-
 import { FormsModule } from '@angular/forms';
 
 

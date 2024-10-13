@@ -29,11 +29,4 @@ export class ArtisanDatasService {
     }));
   };
 
-  getArtisansByCategories(){
-    const artisans = this.http.get<InterfaceArtisans[]>(this._url)
-    const artisanCategories = (category: keyof typeof artisans) => {
-      return artisans[category]
-    }
-  }
-  
 }
