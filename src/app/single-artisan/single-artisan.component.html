@@ -32,17 +32,21 @@
 <div class="container">
     <div class="form">
         <h5 class="fs-2 fw-bold text-title">Contact</h5>
-        <form  (ngSubmit)="onSubmit($event)" novalidate>
+        <form  (ngSubmit)="onSubmit()" novalidate>
             <div class="d-flex flex-column flex-md-row justify-content-md-between mt-2">
-                <input class="mb-4 ps-3 py-1 bg-back border border-1 border-border rounded-4" type="text" name="user_firstname" required placeholder="Prénom">
-                <input class="mb-md-4 ps-3 py-1 bg-back border border-1 border-border rounded-4" type="text" name="user_lastname" required placeholder="Nom">
+                <input class="mb-4 ps-3 py-1 bg-back border border-1 border-border rounded-4" type="text" name="user_firstname" [(ngModel)]="firstName" placeholder="Prénom">
+                <input class="mb-md-4 ps-3 py-1 bg-back border border-1 border-border rounded-4" type="text" name="user_lastname"[(ngModel)]="lastName" placeholder="Nom">
             </div>
             <div class="d-flex flex-column mt-4 mt-md-0 py-1">
-                <input class="mb-4 ps-3 py-1 bg-back border border-1 border-border rounded-4" type="mail" name="user_email" required placeholder="Mail">
-                <input class="mb-4 ps-3 py-1 bg-back border border-1 border-border rounded-4" type="text" name="object" required placeholder="Objet">
-                <textarea class="mb-4 ps-3 bg-back border border-1 border-border rounded-4" name="message" required placeholder="Message"></textarea>
-                <button class="mb-4 text-white bg-border border border-1 border-border rounded-4" type="submit">Envoyez</button>
+                @if (emailError) {
+                    <p class="text-danger">Mail invalide</p>
+                }
+                <input class="mb-4 ps-3 py-1 bg-back border border-1 border-border rounded-4" type="text" name="user_email"[(ngModel)]="email" (input)="validateEmail()" placeholder="Mail">
+                <input class="mb-4 ps-3 py-1 bg-back border border-1 border-border rounded-4" type="text" name="object" [(ngModel)]="object" placeholder="Objet">
+                <textarea class="mb-4 ps-3 bg-back border border-1 border-border rounded-4" name="message" [(ngModel)]="message" placeholder="Message"></textarea>
+                <button class="mb-4 text-white bg-border border border-1 border-border rounded-4" type="submit" [disabled]="emailError || !email">Envoyez</button>
             </div>
         </form>
     </div>
+
 </div>
