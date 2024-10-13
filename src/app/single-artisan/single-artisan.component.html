@@ -44,6 +44,18 @@
                 <input class="mb-4 ps-3 py-1 bg-back border border-1 border-border rounded-4" type="text" name="user_email"[(ngModel)]="email" (input)="validateEmail()" placeholder="Mail">
                 <input class="mb-4 ps-3 py-1 bg-back border border-1 border-border rounded-4" type="text" name="object" [(ngModel)]="object" placeholder="Objet">
                 <textarea class="mb-4 ps-3 bg-back border border-1 border-border rounded-4" name="message" [(ngModel)]="message" placeholder="Message"></textarea>
+                @if (emailSent === true){
+                    <div class="mailSuccess">
+                        <p class="mailSuccessText">L'email a été envoyé avec succès !</p>
+                    </div>
+                }
+                @if (emailSent === false){
+                    <div class="d-flex">
+                        <p class="justify-content-center text-danger">
+                            {{emailErrorMessage}}
+                        </p>
+                    </div>
+                }
                 <button class="mb-4 text-white bg-border border border-1 border-border rounded-4" type="submit" [disabled]="emailError || !email">Envoyez</button>
             </div>
         </form>

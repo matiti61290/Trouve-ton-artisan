@@ -29,8 +29,13 @@ export class SingleArtisanComponent implements OnInit {
   object:string = ''
   message:string = ''
 
+  // Verification email
   emailError: boolean = false
   emailPattern: RegExp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+  // Message pour si succes ou echec de l'envoie
+  emailSent: boolean | null = null
+  emailErrorMessage: string = ''
 
   constructor(
     private route: ActivatedRoute,
@@ -67,10 +72,11 @@ export class SingleArtisanComponent implements OnInit {
       emailjs.send('service_uer984q', 'template_i1k60pb', templateParams, {publicKey: '1oFyPt_ixXmtaAEqV'})
       .then(
         () => {
-          console.log('success')
+          this.emailSent = true
         },
         (error) => {
-          console.log('failed', (error as EmailJSResponseStatus).text)
+          this.emailSent = false
+          this.emailErrorMessage = 'Échec de l\'envoi de l\'email. Veuillez réessayer.'
         }
       )
     }
